@@ -1,28 +1,17 @@
 #include<stdio.h>
+int main() {
+    int a[5]={10,20,30,40,50};
+    int *p;
+    p=a;
 
-int main(){
-    int k;
-    scanf("%d", &k);
-    int nums[k];
-    for(int i=0; i<k; i++){
-        scanf("%d", &nums[i]);
-    }
-    int copy[k];
-    for(int i=0; i<k; i++){
-        copy[i] = nums[i];
-    }
-    int p = 0;                     
-    for(int i=0; i<k; i++){
-        if(copy[i]!=0){
-            nums[p++] = copy[i];
-        }
-    }
-    for(int i=p; i<k; i++){
-        nums[i] = 0;
-    }
-    for(int i=0; i<k; i++){
-        printf("%d ", nums[i]);
-    }
-    printf("\n");
-    
+    printf("%d\n",*p);
+    printf("%d\n",*(p+1));
+    printf("%d\n",*(p+3));
+
+    printf("%p\n",(void*)&a[2]);
+    printf("%p\n",(void*)(p+2));
+    printf("%d\n",*(&a[2]));
+
+    printf("%p\n",(void*)&a[4]);
+    printf("%d\n",*(&a[4]));
 }
